@@ -70,6 +70,8 @@ agent-dev-lab/
 
 ## 使い方
 
+実装後の形。今は `seed-all`（1回分の投入を測る）と `down` がある。
+
 ```
 go run ./cmd/lab -config config.toml run   # 全条件を流し、生データを書く
 go run ./cmd/lab summarize                 # 集計と README 用の表を作る
