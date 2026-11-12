@@ -1,0 +1,5 @@
+CREATE TABLE attendees (
+  id VARCHAR(32) PRIMARY KEY,
+  name VARCHAR(100) NOT NULL,
+  tier VARCHAR(16) NOT NULL
+);

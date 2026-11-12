@@ -1,0 +1,5 @@
+CREATE TABLE venues (
+  id VARCHAR(32) PRIMARY KEY,
+  name VARCHAR(100) NOT NULL,
+  capacity INT NOT NULL
+);

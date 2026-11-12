@@ -1,0 +1,16 @@
+services:
+  mysql:
+    image: mysql:8.4
+    environment:
+      MYSQL_ROOT_PASSWORD: lab
+      MYSQL_DATABASE: lab
+    ports:
+      - "${LAB_PORT:-33061}:3306"
+    volumes:
+      - ./mysql/${LAB_MYCNF:-default}.cnf:/etc/mysql/conf.d/lab.cnf:ro
+    healthcheck:
+      # 初期化中の一時サーバはソケットだけで待ち受け、root のパスワードもまだ無い。
+      # TCP でパスワード付きの接続が通るまで待たないと、初期化の途中で健全と判定される
+      test: ["CMD", "mysql", "-h127.0.0.1", "-uroot", "-plab", "-e", "SELECT 1"]
+      interval: 2s
+      retries: 60

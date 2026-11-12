@@ -1,0 +1,6 @@
+# 永続性を捨てて書き込みを速くする設定。問い3でこれが投入を縮めるかを測る
+[mysqld]
+innodb_flush_log_at_trx_commit=0
+sync_binlog=0
+skip-log-bin
+innodb_doublewrite=OFF

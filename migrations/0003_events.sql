@@ -1,0 +1,7 @@
+CREATE TABLE events (
+  id VARCHAR(32) PRIMARY KEY,
+  venue_id VARCHAR(32) NOT NULL,
+  title VARCHAR(200) NOT NULL,
+  status VARCHAR(16) NOT NULL,
+  FOREIGN KEY (venue_id) REFERENCES venues(id)
+);

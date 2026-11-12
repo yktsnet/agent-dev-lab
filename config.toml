@@ -1,0 +1,13 @@
+# 変動要因をここで固定する。同じ値で流せば同じ場面ができる
+seed = 42
+runs = 3
+results = "results/raw/seed-all.csv"
+
+[db]
+project = "adl"
+port = 33061
+mycnf = "default"   # default | relaxed
+
+[[condition]]
+name = "scenes-40"
+scenes = 40
